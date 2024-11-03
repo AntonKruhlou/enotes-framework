@@ -48,11 +48,9 @@ describe('Basket Тест', () => {
     await homePage.open();
     await homePage.notesSection.waitFor();
     await homePage.notesSection.checkCardWithoutDiscountIsDisplayed(cardIndex);
-
     card = homePage.notesSection.getCardWithoutDiscountByIndex(cardIndex);
     cardProductName = await card.getProductName();
     cardProductPrice = await card.getProductPrice();
-
     await card.clickBuyButton();
 
     await headerComponent.waitFor();
@@ -85,11 +83,9 @@ describe('Basket Тест', () => {
     await homePage.open();
     await homePage.notesSection.waitFor();
     await homePage.notesSection.checkCardWithDiscountIsDisplayed(cardIndex);
-
     card = homePage.notesSection.getCardWithDiscountByIndex(cardIndex);
     cardProductName = await card.getProductName();
     cardProductPrice = await card.getProductPrice();
-
     await card.clickBuyButton();
 
     await headerComponent.waitFor();
@@ -142,7 +138,7 @@ describe('Basket Тест', () => {
     assertEqual(
       requiredAmountOfItems,
       await basketPopup.countItems(),
-      'Items amount is not as expected',
+      'items amount is not as expected',
     );
 
     assertEqual(
@@ -152,11 +148,9 @@ describe('Basket Тест', () => {
     );
 
     basketItem = basketPopup.getItemByIndex(getRandomNumber(requiredAmountOfItems));
-
     await basketItem.waitFor();
     await basketItem.checkTitleIsDisplayed();
     await basketItem.checkPriceIsDisplayed();
-
     await basketPopup.clickGoToBasketButton();
 
     await basketPage.waitFor();
@@ -170,11 +164,9 @@ describe('Basket Тест', () => {
     await homePage.open();
     await homePage.notesSection.waitFor();
     await homePage.notesSection.checkCardWithDiscountIsDisplayed(cardIndex);
-
     card = homePage.notesSection.getCardWithDiscountByIndex(cardIndex);
     cardProductName = await card.getProductName();
     cardProductPrice = +(await card.getProductPrice()).split(' ')[0];
-
     productsTotalPrice = cardProductPrice * requiredAmountOfItems;
     await card.setNumber(requiredAmountOfItems.toString());
     await card.clickBuyButton();
@@ -196,7 +188,6 @@ describe('Basket Тест', () => {
     await basketItem.waitFor();
     await basketItem.checkTitleIsDisplayed();
     await basketItem.checkPriceIsDisplayed();
-
     await basketPopup.clickGoToBasketButton();
 
     await basketPage.waitFor();
