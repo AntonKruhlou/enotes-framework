@@ -7,9 +7,9 @@ enum Env {
 
 const envs: any = {
   [Env.dev]: {
-    client: '',
+    client: 'https://enotes.pointschool.ru',
     admin: '',
-    api: '',
+    api: 'https://enotes.pointschool.ru',
   },
   [Env.stage]: {
     client: 'https://enotes.pointschool.ru',
