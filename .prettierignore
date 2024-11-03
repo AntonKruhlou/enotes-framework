@@ -1,0 +1,9 @@
+node_modules
+apps
+allure-report*
+reports
+logs
+.husky
+.idea
+.github
+package-lock.json
