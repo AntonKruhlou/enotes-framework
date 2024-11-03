@@ -5,7 +5,7 @@ export const waitUrlContains = async (
   options?: { timeout: number },
 ): Promise<void> => {
   await browser.waitUntil(async () => (await browser.getUrl()).includes(substring), {
-    timeout: options?.timeout || timeouts.medium,
+    timeout: options?.timeout || timeouts.small,
     timeoutMsg: `Url does not contain ${substring}`,
   });
 };
