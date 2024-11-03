@@ -4,7 +4,6 @@ import { AxiosRequestConfig } from 'axios';
 
 const getCommonHeaders = async (): Promise<{}> => {
   const cookies = await browser.getAllCookies();
-
   const sessId = cookies.find((el) => el.name === 'PHPSESSID')?.value;
   const _csrf = cookies.find((el) => el.name === '_csrf')?.value;
 
@@ -24,7 +23,6 @@ export class SupportService extends ApiServiceAbstract {
 
   public async getHomePageHtml(): Promise<any> {
     const url = `${this.baseUrl}`;
-
     const headers = await getCommonHeaders();
 
     return (await this.call({ method: 'GET', url, headers })).data;

@@ -1,7 +1,3 @@
-// import { AxiosError, AxiosRequestConfig, AxiosResponse } from 'axios';
-// import { logger } from '../support/logger/logger';
-// import { addTimestamp } from '../support/add-timestamp';
-
 import axios, { AxiosError, AxiosRequestConfig, AxiosResponse } from 'axios';
 import { addTimestamp } from '../support/add-timestamp';
 import { logger } from '../support/logger/logger';
