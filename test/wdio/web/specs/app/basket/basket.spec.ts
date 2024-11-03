@@ -14,12 +14,18 @@ import { addUniqueProductsAndGetHolePrice } from './support/add-unique-items-and
 
 describe('Basket Тест', () => {
   const member = getMembersConfig().default;
+  let card: NoteCardComponent;
+  let basketItem: BasketItemComponent;
+  let cardProductName: string;
+  let cardProductPrice: number | string;
+  let productsTotalPrice: number;
 
   before(async () => {
     await login(member);
   });
 
   beforeEach(async () => {
+    // using API
     await clearBasket();
   });
 
@@ -38,10 +44,6 @@ describe('Basket Тест', () => {
 
   it('2. Переход в корзину с 1 неакционным товаром', async () => {
     const cardIndex = 0;
-    let card: NoteCardComponent;
-    let basketItem: BasketItemComponent;
-    let cardProductName: string;
-    let cardProductPrice: string;
 
     await homePage.open();
     await homePage.notesSection.waitFor();
@@ -79,10 +81,6 @@ describe('Basket Тест', () => {
 
   it('3. Переход в корзину с 1 акционным товаром', async () => {
     const cardIndex = 0;
-    let card: NoteCardComponent;
-    let basketItem: BasketItemComponent;
-    let cardProductName: string;
-    let cardProductPrice: string;
 
     await homePage.open();
     await homePage.notesSection.waitFor();
@@ -121,8 +119,6 @@ describe('Basket Тест', () => {
 
   it('4. Переход в корзину с 9 разными товарами', async () => {
     const requiredAmountOfItems = 9;
-    let productsTotalPrice: number;
-    let basketItem: BasketItemComponent;
     productsTotalPrice = 0;
 
     // using API
@@ -169,11 +165,6 @@ describe('Basket Тест', () => {
   it('5. Переход в корзину с 9 акционными товарами одного наименования', async () => {
     const requiredAmountOfItems = 9;
     const cardIndex = 0;
-    let productsTotalPrice: number;
-    let basketItem: BasketItemComponent;
-    let card: NoteCardComponent;
-    let cardProductName: string;
-    let cardProductPrice: number;
     productsTotalPrice = 0;
 
     await homePage.open();
