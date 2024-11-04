@@ -39,6 +39,7 @@ describe('Basket Тест', () => {
     await basketPopup.waitFor();
     await basketPopup.clickGoToBasketButton();
 
+    // includes url checking and waiting for element
     await basketPage.waitFor();
   });
 
@@ -74,6 +75,7 @@ describe('Basket Тест', () => {
 
     await basketPopup.clickGoToBasketButton();
 
+    // url checking - passed, looking and waiting for element - failed
     await basketPage.waitFor();
   });
 
@@ -110,6 +112,7 @@ describe('Basket Тест', () => {
 
     await basketPopup.clickGoToBasketButton();
 
+    // url checking - passed, looking and waiting for element - failed
     await basketPage.waitFor();
   });
 
